@@ -2,6 +2,12 @@
 ---------------
 
 key's length must is 24
+## Install
+
+```
+dep ensure -add github.com/huyinghuan/cfb
+```
+
 
 ## func
 
