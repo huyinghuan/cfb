@@ -7,7 +7,8 @@ import (
 
 func TestCBC(t *testing.T) {
   cbc := New("helle world")
-  result, e := cbc.EncryptString("zzz")
+  text:="zzz"
+  result, e := cbc.EncryptString(text)
   if e!=nil{
     log.Println(e)
     t.Fail()
@@ -17,5 +18,7 @@ func TestCBC(t *testing.T) {
     log.Println(e)
     t.Fail()
   }
-  log.Println(l)
+  if text != l{
+    t.Fail()
+  }
 }

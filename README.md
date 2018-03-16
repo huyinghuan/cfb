@@ -1,8 +1,6 @@
 # CFB encrypt content
 ---------------
 
-key's length must is 24
-
 ## Install
 
 ```
