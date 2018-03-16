@@ -2,6 +2,7 @@
 ---------------
 
 key's length must is 24
+
 ## Install
 
 ```
@@ -28,7 +29,7 @@ dep ensure -add github.com/huyinghuan/encryption
     
 ### DecryptString
 
-    func DecryptString(key []byte, cryptoText string) (string, error) {}
+    func DecryptString(cryptoText string) (string, error) {}
 
 ## CFB
 
@@ -46,8 +47,8 @@ dep ensure -add github.com/huyinghuan/encryption
     
 ### DecryptString
 
-    func DecryptString(key []byte, cryptoText string) (string, error) {}
-    
+    func DecryptString(cryptoText string) (string, error) {}
+
 ### Demo    
 
 ```
