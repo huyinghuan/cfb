@@ -2,23 +2,74 @@
 ---------------
 
 key's length must is 24
+## Install
 
-## func
+```
+
+dep ensure -add github.com/huyinghuan/encryption
+
+```
+
+## CBC
+
+### New(key string)
 
 ### Encrypt
 
-func Encrypt(key []byte, plaintext []byte) (result []byte, encErr error) {}
-
+    func Encrypt(plaintext []byte) (result []byte, encErr error) {}
 
 ### EncryptString
 
-func EncryptString(key []byte, text string) (string, error) {}
-
+    func EncryptString(text string) (string, error) {}
+    
 ### Decrypt
 
-func Decrypt(key []byte, ciphertext []byte) ([]byte, error){}
-
-
+    func Decrypt(ciphertext []byte) ([]byte, error){}
+    
 ### DecryptString
 
-func DecryptString(key []byte, cryptoText string) (string, error) {}
+    func DecryptString(key []byte, cryptoText string) (string, error) {}
+
+## CFB
+
+### Encrypt
+
+    func Encrypt(plaintext []byte) (result []byte, encErr error) {}
+
+### EncryptString
+
+    func EncryptString(text string) (string, error) {}
+    
+### Decrypt
+
+    func Decrypt(ciphertext []byte) ([]byte, error){}
+    
+### DecryptString
+
+    func DecryptString(key []byte, cryptoText string) (string, error) {}
+    
+### Demo    
+
+```
+package main
+
+import (
+  "github.com/huyinghuan/encryption/cbc"
+  "log"
+)
+
+func main(){
+  encrypt := cbc.New("helle world")
+  result, e := encrypt.EncryptString("zzz")
+  if e!=nil{
+    log.Println(e)
+    return
+  }
+  l, e:= encrypt.DecryptString(result)
+  if e!=nil{
+    log.Println(e)
+    return
+  }
+  log.Println(l)
+}
+```
